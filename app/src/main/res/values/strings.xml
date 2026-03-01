@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Gestión de Abogados</string>
+
+    <!-- TITULOS -->
+    <string name="titulo_principal">Sistema de Gestión de Abogados</string>
+    <string name="registrar_abogado">Registrar Abogado</string>
+    <string name="lista_abogados">Lista de Abogados</string>
+    <string name="editar_abogado">Editar Abogado</string>
+
+    <!-- CAMPOS -->
+    <string name="nombre_abogado">Nombre del abogado</string>
+    <string name="especialidad">Especialidad</string>
+    <string name="telefono">Teléfono</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="historial">Historial profesional</string>
+
+    <!-- BOTONES -->
+    <string name="guardar">Guardar</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="ver_abogados">Ver abogados</string>
+
+    <!-- ACTIVITY_LISTA -->
+    <string name="buscar_abogado">Buscar abogado...</string>
+    <string name="buscar_nombre">Nombre</string>
+    <string name="buscar_id">ID</string>
+    <string name="buscar_dni">DNI</string>
+    <string name="buscar">Buscar</string>
+    <string name="anterior">Anterior</string>
+    <string name="siguiente">Siguiente</string>
+</resources>
