@@ -29,5 +29,10 @@
     <string name="anterior">Anterior</string>
     <string name="siguiente">Siguiente</string>
 
-    <!-- ACTIVITY_LISTA ENSEÑANDOLE A DANIEL GIT cambia a las 21:07 xd -->
+    <!-- Enseñandole a angel  GIT -->
+    <!-- ir a la ruta y copiar url poner cd "ruta" (ojo debe salir main)-->
+    <!-- SUBIR LOS CAMBIOS (primero preguntas al equipo para hacer git pull) -->
+    <!-- git add . -->
+    <!-- git commit -m "comentario" -->
+    <!-- git push -->
 </resources>
