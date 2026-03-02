@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="24dp">
 
         <TextView
             android:text="@string/titulo_principal"
-            android:textSize="22sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             android:gravity="center"
             android:textColor="@color/primary"
             android:layout_marginBottom="20dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"/><!--tamaño-->
 
         <!-- Tarjeta Registrar -->
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginBottom="15dp"
+            android:layout_height="130dp"
+            android:layout_marginBottom="20dp"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,13 +40,13 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
-                    android:text="@string/registrar_abogado"
+                <Button
+                    android:id="@+id/registrar"
+                    android:text="@string/registrar"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/primary"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
             </LinearLayout>
 
@@ -52,6 +57,8 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginBottom="15dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
             android:clickable="true"
             android:focusable="true">
 
@@ -61,13 +68,13 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
+                <Button
+                    android:id="@+id/listaAbogados"
                     android:text="@string/lista_abogados"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/primary"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
             </LinearLayout>
 
@@ -78,6 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginBottom="15dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
             android:clickable="true"
             android:focusable="true">
 
@@ -87,13 +96,13 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
+                <Button
+                    android:id="@+id/editar"
                     android:text="@string/editar_abogado"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/primary"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
             </LinearLayout>
 

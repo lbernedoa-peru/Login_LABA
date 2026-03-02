@@ -12,10 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login_LABA">
         <activity
-            android:name=".activity_lista"
+            android:name=".EditarActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_Registrar"
+            android:name=".ListarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrarActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

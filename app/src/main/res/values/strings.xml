@@ -3,7 +3,7 @@
 
     <!-- TITULOS -->
     <string name="titulo_principal">Sistema de Gestión de Abogados</string>
-    <string name="registrar_abogado">Registrar Abogado</string>
+    <string name="registrar">Registrar Abogado</string>
     <string name="lista_abogados">Lista de Abogados</string>
     <string name="editar_abogado">Editar Abogado</string>
 
