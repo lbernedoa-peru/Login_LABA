@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         registrar_abogado = findViewById(R.id.registrar);
         listaAbogados = findViewById(R.id.listaAbogados);
-        editar =findViewById(R.id.editar);
+        editar = findViewById(R.id.editar);
 
         registrar_abogado.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, RegistrarActivity.class);

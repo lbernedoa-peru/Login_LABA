@@ -31,29 +31,37 @@
                 <EditText
                     android:id="@+id/txtNombre"
                     android:hint="Nombre del abogado"
+                    android:inputType="text"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-                <EditText
-                    android:id="@+id/txtEspecialidad"
-                    android:hint="Especialidad"
-                    android:layout_marginTop="10dp"
+                <AutoCompleteTextView
+                    android:id="@+id/etEspecializacion"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:hint="Especialización"
+                    android:focusable="false"
+                    android:clickable="true"/>
 
                 <EditText
                     android:id="@+id/txtTelefono"
                     android:hint="Teléfono"
                     android:layout_marginTop="10dp"
+                    android:inputType="number"
+                    android:maxLength="9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-                <EditText
-                    android:id="@+id/txtCorreo"
-                    android:hint="Correo"
-                    android:layout_marginTop="10dp"
+                <AutoCompleteTextView
+                    android:id="@+id/etCorreo"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:hint="Ingresa tu correo"
+                    android:inputType="textEmailAddress"
+                    android:padding="12dp"/>
+
+
 
                 <Button
                     android:id="@+id/btnGuardar"
