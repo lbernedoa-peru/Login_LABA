@@ -1,26 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fondo_suave"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:padding="24dp"
         android:orientation="vertical">
 
+        <!-- TITULO -->
         <TextView
             android:text="Registrar Abogado"
-            android:textSize="22sp"
+            android:textSize="26sp"
             android:textStyle="bold"
-            android:textColor="@color/primary"
+            android:textColor="#0D47A1"
             android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+        <!-- TARJETA FORMULARIO -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
                 android:padding="20dp"
@@ -32,8 +40,7 @@
                 <EditText
                     android:id="@+id/txtNombre"
                     android:hint="Nombre del abogado"
-                    android:inputType="text"
-                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                    android:inputType="textPersonName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -43,39 +50,36 @@
                     android:hint="DNI"
                     android:inputType="number"
                     android:maxLength="8"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <!-- ESPECIALIDAD -->
                 <AutoCompleteTextView
                     android:id="@+id/etEspecializacion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:hint="Especialización"
-                    android:focusable="false"
-                    android:clickable="true"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
                 <!-- TELEFONO -->
                 <EditText
                     android:id="@+id/txtTelefono"
                     android:hint="Teléfono"
-                    android:layout_marginTop="10dp"
-                    android:inputType="number"
+                    android:inputType="phone"
                     android:maxLength="9"
+                    android:layout_marginTop="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
                 <!-- CORREO -->
-                <AutoCompleteTextView
+                <EditText
                     android:id="@+id/etCorreo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Ingresa tu correo"
+                    android:hint="Correo electrónico"
                     android:inputType="textEmailAddress"
-                    android:padding="12dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
                 <!-- BIOGRAFIA -->
                 <EditText
@@ -83,7 +87,8 @@
                     android:hint="Biografía del abogado"
                     android:inputType="textMultiLine"
                     android:minLines="3"
-                    android:layout_marginTop="10dp"
+                    android:gravity="top"
+                    android:layout_marginTop="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -91,6 +96,8 @@
                 <Button
                     android:id="@+id/btnGuardar"
                     android:text="Guardar Abogado"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#1565C0"
                     android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -100,4 +107,5 @@
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
+
 </ScrollView>

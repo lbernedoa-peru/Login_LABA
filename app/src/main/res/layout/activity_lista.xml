@@ -1,104 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="20dp"
+    android:background="@drawable/fondo_suave"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!-- TITULO -->
     <TextView
         android:text="@string/lista_abogados"
-        android:textSize="22sp"
+        android:textSize="26sp"
         android:textStyle="bold"
-        android:textColor="@color/primary"
-        android:layout_marginBottom="10dp"
+        android:textColor="#0D47A1"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <!-- BUSCADOR -->
-    <EditText
-        android:id="@+id/txtBuscar"
-        android:hint="@string/buscar_abogado"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-
-    <!-- FILTROS -->
-    <RadioGroup
-        android:id="@+id/radioFiltro"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/rbNombre"
-            android:text="@string/buscar_nombre"
-            android:checked="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioButton
-            android:id="@+id/rbId"
-            android:text="@string/buscar_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"/>
-
-        <RadioButton
-            android:id="@+id/rbDni"
-            android:text="@string/buscar_dni"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"/>
-
-    </RadioGroup>
-
-    <!-- BOTON BUSCAR -->
-    <Button
-        android:id="@+id/btnBuscar"
-        android:text="@string/buscar"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <!-- BOTON LIMPIAR -->
-    <Button
-        android:id="@+id/btnLimpiar"
+    <!-- TARJETA BUSCADOR -->
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mostrar todos"/>
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@android:color/white"
+        android:layout_marginBottom="15dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/txtBuscar"
+                android:hint="@string/buscar_abogado"
+                android:background="@android:drawable/edit_text"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioGroup
+                android:id="@+id/radioFiltro"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rbNombre"
+                    android:text="@string/buscar_nombre"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rbId"
+                    android:text="@string/buscar_id"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rbDni"
+                    android:text="@string/buscar_dni"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnBuscar"
+                android:text="@string/buscar"
+                android:backgroundTint="#1976D2"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnLimpiar"
+                android:text="Mostrar todos"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <!-- LISTA -->
-    <ListView
-        android:id="@+id/listaAbogados"
-        android:dividerHeight="8dp"
-        android:layout_marginTop="10dp"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@android:color/white">
+
+        <ListView
+            android:id="@+id/listaAbogados"
+            android:dividerHeight="8dp"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
 
     <!-- PAGINACION -->
     <LinearLayout
         android:orientation="horizontal"
         android:gravity="center"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/btnAnterior"
             android:text="@string/anterior"
+            android:layout_margin="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"/>
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/txtPagina"
             android:text="Página 1"
             android:textStyle="bold"
+            android:textSize="16sp"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -106,9 +134,9 @@
         <Button
             android:id="@+id/btnSiguiente"
             android:text="@string/siguiente"
+            android:layout_margin="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"/>
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
