@@ -2,19 +2,19 @@ package com.example.login_laba;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button registrar_abogado;
-    Button listaAbogados;
-    Button editar;
+    CardView cardRegistrar;
+    CardView cardLista;
+    CardView cardEditar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,21 +28,21 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        registrar_abogado = findViewById(R.id.registrar);
-        listaAbogados = findViewById(R.id.listaAbogados);
-        editar = findViewById(R.id.editar);
+        cardRegistrar = findViewById(R.id.cardRegistrar);
+        cardLista = findViewById(R.id.cardLista);
+        cardEditar = findViewById(R.id.cardEditar);
 
-        registrar_abogado.setOnClickListener(v -> {
+        cardRegistrar.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, RegistrarActivity.class);
             startActivity(intent);
         });
 
-        listaAbogados.setOnClickListener(v -> {
+        cardLista.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, ListarActivity.class);
             startActivity(intent);
         });
 
-        editar.setOnClickListener(v -> {
+        cardEditar.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, EditarActivity.class);
             startActivity(intent);
         });
