@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
-
+    android:background="@drawable/fondo_profesional">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,99 +12,212 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <TextView
-            android:text="@string/titulo_principal"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="@color/primary"
-            android:layout_marginBottom="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/><!--tamaño-->
+        <!-- TÍTULO -->
 
-        <!-- Tarjeta Registrar -->
+        <!-- REGISTRAR -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/titulo_principal"
+            android:textColor="@color/material_dynamic_primary30"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardRegistrar"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@android:drawable/ic_input_add" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Registrar Abogado"
+                        android:textColor="@color/primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Agregar nuevo abogado al sistema"
+                        android:textColor="#777777"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- LISTA -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:padding="20dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@android:drawable/ic_menu_agenda"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="20dp"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Lista de Abogados"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Consultar registros existentes"
+                        android:textSize="14sp"
+                        android:textColor="#777777"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- EDITAR -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
             android:clickable="true"
             android:focusable="true"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp">
+            app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
+                android:padding="20dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/registrar"
-                    android:text="@string/registrar"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                <ImageView
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="20dp"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Editar Abogado"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:text="Modificar información existente"
+                        android:textSize="14sp"
+                        android:textColor="#777777"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
-        <!-- Tarjeta Lista -->
+
+        <!-- ELIMINAR-->
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardEliminar"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginBottom="15dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:layout_marginTop="10dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/listaAbogados"
-                    android:text="@string/lista_abogados"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@android:drawable/ic_menu_delete" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Eliminar Abogado"
+                        android:textColor="@color/primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Eliminar información existente"
+                        android:textColor="#777777"
+                        android:textSize="14sp" />
+                </LinearLayout>
 
             </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <!-- Tarjeta Editar-->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginBottom="15dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
-            android:clickable="true"
-            android:focusable="true">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/editar"
-                    android:text="@string/editar_abogado"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-            </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>

@@ -6,6 +6,7 @@
     <string name="registrar">Registrar Abogado</string>
     <string name="lista_abogados">Lista de Abogados</string>
     <string name="editar_abogado">Editar Abogado</string>
+    <string name="eliminar_abogado">Eliminar Abogado</string>
 
     <!-- CAMPOS -->
     <string name="nombre_abogado">Nombre del abogado</string>
