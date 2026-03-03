@@ -1,13 +1,15 @@
 package com.example.login_laba;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Patterns;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,10 +18,10 @@ import java.util.ArrayList;
 
 public class RegistrarActivity extends AppCompatActivity {
 
-    EditText txtNombre, txtTelefono;
+    EditText txtNombre, txtTelefono, txtDni, txtBiografia;
     AutoCompleteTextView etCorreo, etEspecializacion;
     Button btnGuardar;
-    DatabaseHelper db;
+    DBHelper db;
 
     String[] dominios = {
             "gmail.com",
@@ -35,17 +37,17 @@ public class RegistrarActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_registrar);
 
-        // 🔹 Base de datos
-        db = new DatabaseHelper(this);
+        db = new DBHelper(this);
 
-        // 🔹 Vincular con XML (TUS IDS)
         txtNombre = findViewById(R.id.txtNombre);
         txtTelefono = findViewById(R.id.txtTelefono);
+        txtDni = findViewById(R.id.txtDni);
+        txtBiografia = findViewById(R.id.txtBiografia);
         etEspecializacion = findViewById(R.id.etEspecializacion);
         etCorreo = findViewById(R.id.etCorreo);
         btnGuardar = findViewById(R.id.btnGuardar);
 
-        // 🔹 Dropdown Especialización
+        // Lista especialización
         String[] opciones = {
                 "Derecho Penal",
                 "Derecho Civil",
@@ -65,7 +67,7 @@ public class RegistrarActivity extends AppCompatActivity {
         etEspecializacion.setAdapter(adapterEspecialidad);
         etEspecializacion.setOnClickListener(v -> etEspecializacion.showDropDown());
 
-        // 🔹 Autocompletado correo
+        // Autocompletar correo
         etCorreo.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -99,33 +101,91 @@ public class RegistrarActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {}
         });
 
-        // 🔥 BOTÓN GUARDAR
-        btnGuardar.setOnClickListener(v -> {
+        // BOTÓN GUARDAR
+        btnGuardar.setOnClickListener(v -> validarYGuardar());
+    }
 
-            String nombre = txtNombre.getText().toString().trim();
-            String especializacion = etEspecializacion.getText().toString().trim();
-            String telefono = txtTelefono.getText().toString().trim();
-            String email = etCorreo.getText().toString().trim();
+    private void validarYGuardar() {
 
-            if (nombre.isEmpty() || especializacion.isEmpty() || telefono.isEmpty() || email.isEmpty()) {
-                Toast.makeText(this, "Complete todos los campos", Toast.LENGTH_SHORT).show();
-                return;
-            }
+        String dni = txtDni.getText().toString().trim();
+        String nombre = txtNombre.getText().toString().trim();
+        String especializacion = etEspecializacion.getText().toString().trim();
+        String telefono = txtTelefono.getText().toString().trim();
+        String email = etCorreo.getText().toString().trim();
+        String biografia = txtBiografia.getText().toString().trim();
 
-            boolean insertado = db.insertarAbogado(nombre, especializacion, telefono, email);
+        // Validar campos vacíos
+        if (dni.isEmpty() || nombre.isEmpty() || especializacion.isEmpty()
+                || telefono.isEmpty() || email.isEmpty() || biografia.isEmpty()) {
 
-            if (insertado) {
-                Toast.makeText(this, "Guardado correctamente", Toast.LENGTH_SHORT).show();
+            mostrarAlerta("Campos incompletos", "Debe completar todos los campos.");
+            return;
+        }
 
-                // Limpiar campos
-                txtNombre.setText("");
-                txtTelefono.setText("");
-                etEspecializacion.setText("");
-                etCorreo.setText("");
-            } else {
-                Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show();
-            }
-        });
+        // Validar DNI
+        if (dni.length() != 8) {
+            mostrarAlerta("DNI inválido", "El DNI debe tener exactamente 8 dígitos.");
+            return;
+        }
 
+        // Validar Teléfono
+        if (telefono.length() != 9) {
+            mostrarAlerta("Teléfono inválido", "El teléfono debe tener exactamente 9 dígitos.");
+            return;
+        }
+
+        // Validar nombre
+        if (nombre.length() < 3) {
+            mostrarAlerta("Nombre inválido", "El nombre debe tener al menos 3 letras.");
+            return;
+        }
+
+        // Validar correo
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            mostrarAlerta("Correo inválido", "Ingrese un correo electrónico válido.");
+            return;
+        }
+
+        // Validar biografía
+        if (biografia.length() < 10) {
+            mostrarAlerta("Biografía muy corta", "La biografía debe tener mínimo 10 caracteres.");
+            return;
+        }
+
+        boolean insertado = db.insertarAbogado(
+                dni,
+                nombre,
+                especializacion,
+                telefono,
+                email,
+                biografia
+        );
+
+        if (insertado) {
+
+            new AlertDialog.Builder(this)
+                    .setTitle("Registro exitoso")
+                    .setMessage("El abogado fue registrado correctamente.")
+                    .setCancelable(false)
+                    .setPositiveButton("Ir al inicio", (dialog, which) -> {
+
+                        Intent intent = new Intent(RegistrarActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+
+                    })
+                    .show();
+
+        } else {
+            mostrarAlerta("Error", "No se pudo registrar el abogado.");
+        }
+    }
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        new AlertDialog.Builder(this)
+                .setTitle(titulo)
+                .setMessage(mensaje)
+                .setPositiveButton("OK", null)
+                .show();
     }
 }

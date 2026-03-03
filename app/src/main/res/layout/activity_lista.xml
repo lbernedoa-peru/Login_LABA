@@ -26,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+
     <!-- FILTROS -->
     <RadioGroup
         android:id="@+id/radioFiltro"
@@ -64,6 +65,12 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <!-- BOTON LIMPIAR -->
+    <Button
+        android:id="@+id/btnLimpiar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mostrar todos"/>
 
     <!-- LISTA -->
     <ListView

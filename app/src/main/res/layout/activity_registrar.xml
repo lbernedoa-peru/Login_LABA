@@ -28,6 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <!-- NOMBRE -->
                 <EditText
                     android:id="@+id/txtNombre"
                     android:hint="Nombre del abogado"
@@ -36,14 +37,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
+                <!-- DNI -->
+                <EditText
+                    android:id="@+id/txtDni"
+                    android:hint="DNI"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!-- ESPECIALIDAD -->
                 <AutoCompleteTextView
                     android:id="@+id/etEspecializacion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Especialización"
                     android:focusable="false"
-                    android:clickable="true"/>
+                    android:clickable="true"
+                    android:layout_marginTop="10dp"/>
 
+                <!-- TELEFONO -->
                 <EditText
                     android:id="@+id/txtTelefono"
                     android:hint="Teléfono"
@@ -53,16 +67,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
+                <!-- CORREO -->
                 <AutoCompleteTextView
                     android:id="@+id/etCorreo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Ingresa tu correo"
                     android:inputType="textEmailAddress"
-                    android:padding="12dp"/>
+                    android:padding="12dp"
+                    android:layout_marginTop="10dp"/>
 
+                <!-- BIOGRAFIA -->
+                <EditText
+                    android:id="@+id/txtBiografia"
+                    android:hint="Biografía del abogado"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-
+                <!-- BOTON -->
                 <Button
                     android:id="@+id/btnGuardar"
                     android:text="Guardar Abogado"
