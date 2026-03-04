@@ -13,7 +13,7 @@
 
         <!-- TITULO -->
         <TextView
-            android:text="Detalle Abogado"
+            android:text="@string/ver_titulo"
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="#0D47A1"
@@ -38,7 +38,7 @@
 
                 <!-- DNI -->
                 <TextView
-                    android:text="DNI"
+                    android:text="@string/ver_label_dni"
                     android:textStyle="bold"
                     android:textColor="#0D47A1"
                     android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
 
                 <!-- NOMBRE -->
                 <TextView
-                    android:text="Nombre"
+                    android:text="@string/ver_label_nombre"
                     android:textStyle="bold"
                     android:textColor="#0D47A1"
                     android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
 
                 <!-- ESPECIALIZACIÓN -->
                 <TextView
-                    android:text="Especialización"
+                    android:text="@string/ver_label_especializacion"
                     android:textStyle="bold"
                     android:textColor="#0D47A1"
                     android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
 
                 <!-- TELÉFONO -->
                 <TextView
-                    android:text="Teléfono"
+                    android:text="@string/ver_label_telefono"
                     android:textStyle="bold"
                     android:textColor="#0D47A1"
                     android:layout_width="wrap_content"
@@ -98,7 +98,7 @@
 
                 <!-- CORREO -->
                 <TextView
-                    android:text="Correo electrónico"
+                    android:text="@string/ver_label_correo"
                     android:textStyle="bold"
                     android:textColor="#0D47A1"
                     android:layout_width="wrap_content"
@@ -113,7 +113,7 @@
 
                 <!-- BIOGRAFÍA -->
                 <TextView
-                    android:text="Biografía"
+                    android:text="@string/ver_label_biografia"
                     android:textStyle="bold"
                     android:textColor="#0D47A1"
                     android:layout_width="wrap_content"
@@ -131,7 +131,7 @@
                 <!-- BOTÓN VOLVER -->
                 <Button
                     android:id="@+id/btnVolver"
-                    android:text="Volver"
+                    android:text="@string/ver_btn_volver"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#1565C0"
                     android:layout_width="match_parent"

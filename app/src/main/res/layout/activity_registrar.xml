@@ -13,7 +13,7 @@
 
         <!-- TITULO -->
         <TextView
-            android:text="Registrar Abogado"
+            android:text="@string/registrar_titulo"
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="#0D47A1"
@@ -39,7 +39,7 @@
                 <!-- NOMBRE -->
                 <EditText
                     android:id="@+id/txtNombre"
-                    android:hint="Nombre del abogado"
+                    android:hint="@string/registrar_hint_nombre"
                     android:inputType="textPersonName"
                     android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
                     android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                 <!-- DNI -->
                 <EditText
                     android:id="@+id/txtDni"
-                    android:hint="DNI"
+                    android:hint="@string/registrar_hint_dni"
                     android:inputType="number"
                     android:maxLength="8"
                     android:layout_marginTop="12dp"
@@ -58,7 +58,7 @@
                 <!-- ESPECIALIDAD -->
                 <AutoCompleteTextView
                     android:id="@+id/etEspecializacion"
-                    android:hint="Especialización"
+                    android:hint="@string/registrar_hint_especializacion"
                     android:layout_marginTop="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -66,7 +66,7 @@
                 <!-- TELEFONO -->
                 <EditText
                     android:id="@+id/txtTelefono"
-                    android:hint="Teléfono"
+                    android:hint="@string/registrar_hint_telefono"
                     android:inputType="phone"
                     android:maxLength="9"
                     android:layout_marginTop="12dp"
@@ -76,7 +76,7 @@
                 <!-- CORREO -->
                 <AutoCompleteTextView
                     android:id="@+id/etCorreo"
-                    android:hint="Correo electrónico"
+                    android:hint="@string/registrar_hint_correo"
                     android:inputType="textEmailAddress"
                     android:layout_marginTop="12dp"
                     android:layout_width="match_parent"
@@ -85,7 +85,7 @@
                 <!-- BIOGRAFIA -->
                 <EditText
                     android:id="@+id/txtBiografia"
-                    android:hint="Biografía del abogado"
+                    android:hint="@string/registrar_hint_biografia"
                     android:inputType="textMultiLine"
                     android:minLines="3"
                     android:gravity="top"
@@ -96,7 +96,7 @@
                 <!-- BOTON -->
                 <Button
                     android:id="@+id/btnGuardar"
-                    android:text="Guardar Abogado"
+                    android:text="@string/registrar_btn_guardar"
                     android:textColor="@android:color/white"
                     android:backgroundTint="#1565C0"
                     android:layout_marginTop="20dp"

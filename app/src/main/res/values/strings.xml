@@ -21,6 +21,14 @@
     <string name="eliminar">Eliminar</string>
     <string name="ver_abogados">Ver abogados</string>
 
+    <!-- ACTIVITY_MAIN -->
+    <string name="main_registrar_titulo">Registrar Abogado</string>
+    <string name="main_registrar_subtitulo">Agregar nuevo abogado al sistema</string>
+    <string name="main_lista_titulo">Lista de Abogados</string>
+    <string name="main_lista_subtitulo">Consultar registros existentes</string>
+    <string name="main_editar_titulo">Editar Abogado</string>
+    <string name="main_editar_subtitulo">Modificar información existente</string>
+
     <!-- ACTIVITY_LISTA -->
     <string name="buscar_abogado">Buscar abogado...</string>
     <string name="buscar_nombre">Nombre</string>
@@ -30,11 +38,39 @@
     <string name="anterior">Anterior</string>
     <string name="siguiente">Siguiente</string>
 
-    <!-- Enseñandole a angel  GIT -->
-    <!-- ir a la ruta y copiar url poner cd "ruta" (ojo debe salir main)-->
-    <!-- SUBIR LOS CAMBIOS (primero preguntas al equipo para hacer git pull) -->
-    <!-- git add . -->
-    <!-- git commit -m "comentario" -->
-    <!-- git push -->
-    <!-- ANGEL CAMBIOS 20:25 -->
+    <!-- ACTIVITY_EDITAR -->
+    <string name="editar_titulo">Editar Abogado</string>
+    <string name="editar_hint_dni">DNI</string>
+    <string name="editar_hint_nombre">Nombre</string>
+    <string name="editar_hint_especializacion">Especialización</string>
+    <string name="editar_hint_telefono">Teléfono</string>
+    <string name="editar_hint_correo">Correo electrónico</string>
+    <string name="editar_hint_biografia">Biografía</string>
+    <string name="editar_btn_actualizar">Actualizar Datos</string>
+
+    <!-- ACTIVITY_VER -->
+    <string name="ver_titulo">Detalle Abogado</string>
+    <string name="ver_label_dni">DNI</string>
+    <string name="ver_label_nombre">Nombre</string>
+    <string name="ver_label_especializacion">Especialización</string>
+    <string name="ver_label_telefono">Teléfono</string>
+    <string name="ver_label_correo">Correo electrónico</string>
+    <string name="ver_label_biografia">Biografía</string>
+    <string name="ver_btn_volver">Volver</string>
+
+    <!-- ACTIVITY_REGISTRAR -->
+    <string name="registrar_titulo">Registrar Abogado</string>
+    <string name="registrar_hint_nombre">Nombre del abogado</string>
+    <string name="registrar_hint_dni">DNI</string>
+    <string name="registrar_hint_especializacion">Especialización</string>
+    <string name="registrar_hint_telefono">Teléfono</string>
+    <string name="registrar_hint_correo">Correo electrónico</string>
+    <string name="registrar_hint_biografia">Biografía del abogado</string>
+    <string name="registrar_btn_guardar">Guardar Abogado</string>
+    <string name="registrar_hint_imagen">Seleccionar foto del abogado</string>
+    <string name="registrar_btn_imagen">Elegir imagen</string>
+
+    <!-- ACTIVITY_LISTA -->
+    <string name="mostrar_todos">Mostrar todos</string>
+    <string name="pagina_inicial">Página 1</string>
 </resources>
