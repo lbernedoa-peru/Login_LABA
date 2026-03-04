@@ -42,10 +42,12 @@ public class VerActivity extends AppCompatActivity {
         Abogado abogado = db.obtenerAbogadoObjeto(id);
 
         if (abogado != null) {
+            txtDni.setText(abogado.getDni());
             txtNombre.setText(abogado.getNombre());
             txtEspecializacion.setText(abogado.getEspecialidad());
             txtTelefono.setText(abogado.getTelefono());
             etCorreo.setText(abogado.getCorreo());
+            txtBiografia.setText(abogado.getBiografia());
         } else {
             Toast.makeText(this, "No se encontró el abogado", Toast.LENGTH_SHORT).show();
             finish();

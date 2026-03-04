@@ -97,10 +97,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if (cursor != null && cursor.moveToFirst()) {
             Abogado abogado = new Abogado(
+                    cursor.getString(cursor.getColumnIndexOrThrow("dni")),
                     cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
                     cursor.getString(cursor.getColumnIndexOrThrow("especialidad")),
                     cursor.getString(cursor.getColumnIndexOrThrow("telefono")),
-                    cursor.getString(cursor.getColumnIndexOrThrow("correo"))
+                    cursor.getString(cursor.getColumnIndexOrThrow("correo")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("biografia"))
             );
             cursor.close();
             return abogado;
