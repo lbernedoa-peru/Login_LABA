@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AlertDialog;
+import android.text.InputFilter;
 
 public class EditarActivity extends AppCompatActivity {
 
@@ -29,6 +30,16 @@ public class EditarActivity extends AppCompatActivity {
         etCorreo = findViewById(R.id.etCorreo);
         txtBiografia = findViewById(R.id.txtBiografia);
         btnActualizar = findViewById(R.id.btnActualizar);
+        // 🔒 BLOQUEAR ESPACIOS EN CORREO
+        etCorreo.setFilters(new InputFilter[]{
+                (source, start, end, dest, dstart, dend) -> {
+                    if (source.toString().contains(" ")) {
+                        return "";
+                    }
+                    return null;
+                }
+        });
+
 
         idAbogado = getIntent().getIntExtra("id", -1);
 

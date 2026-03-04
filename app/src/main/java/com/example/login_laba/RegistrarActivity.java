@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.InputFilter;
 import android.util.Patterns;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -46,6 +47,16 @@ public class RegistrarActivity extends AppCompatActivity {
         etEspecializacion = findViewById(R.id.etEspecializacion);
         etCorreo = findViewById(R.id.etCorreo);
         btnGuardar = findViewById(R.id.btnGuardar);
+
+        etCorreo.setFilters(new InputFilter[]{
+                (source, start, end, dest, dstart, dend) -> {
+                    if (source.toString().contains(" ")) {
+                        return ""; // bloquea el espacio
+                    }
+                    return null;
+                }
+        });
+
 
         // Lista especialización
         String[] opciones = {
