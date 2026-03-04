@@ -17,10 +17,13 @@ public class AbogadoDao {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues valores = new ContentValues();
+        valores.put("dni", abogado.dni);
         valores.put("nombre", abogado.nombre);
         valores.put("especialidad", abogado.especialidad);
         valores.put("telefono", abogado.telefono);
         valores.put("correo", abogado.correo);
+        valores.put("biografia", abogado.biografia);
+        valores.put("imagen", abogado.imagen);
 
         db.insert("abogados", null, valores);
     }

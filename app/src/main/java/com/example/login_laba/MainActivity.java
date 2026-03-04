@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     CardView cardRegistrar;
     CardView cardLista;
-    CardView cardEditar;
+   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         cardRegistrar = findViewById(R.id.cardRegistrar);
         cardLista = findViewById(R.id.cardLista);
-        cardEditar = findViewById(R.id.cardEditar);
+
 
         cardRegistrar.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, RegistrarActivity.class);
@@ -42,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        cardEditar.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, EditarActivity.class);
-            startActivity(intent);
-        });
+
     }
 }

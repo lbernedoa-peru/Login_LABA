@@ -1,7 +1,10 @@
 package com.example.login_laba;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,19 +14,21 @@ public class VerActivity extends AppCompatActivity {
 
     TextView txtDni, txtNombre, txtEspecializacion, txtTelefono, etCorreo, txtBiografia;
     Button btnVolver;
+    ImageView imgAbogado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver);
 
-        txtDni            = findViewById(R.id.txtDni);
-        txtNombre         = findViewById(R.id.txtNombre);
+        txtDni             = findViewById(R.id.txtDni);
+        txtNombre          = findViewById(R.id.txtNombre);
         txtEspecializacion = findViewById(R.id.txtEspecializacion);
-        txtTelefono       = findViewById(R.id.txtTelefono);
-        etCorreo          = findViewById(R.id.etCorreo);
-        txtBiografia      = findViewById(R.id.txtBiografia);
-        btnVolver         = findViewById(R.id.btnVolver);
+        txtTelefono        = findViewById(R.id.txtTelefono);
+        etCorreo           = findViewById(R.id.etCorreo);
+        txtBiografia       = findViewById(R.id.txtBiografia);
+        btnVolver          = findViewById(R.id.btnVolver);
+        imgAbogado         = findViewById(R.id.imgAbogado);
 
         btnVolver.setOnClickListener(v -> finish());
 
@@ -48,6 +53,14 @@ public class VerActivity extends AppCompatActivity {
             txtTelefono.setText(abogado.getTelefono());
             etCorreo.setText(abogado.getCorreo());
             txtBiografia.setText(abogado.getBiografia());
+
+            // CARGAR IMAGEN
+            byte[] imagen = abogado.getImagen();
+            if (imagen != null) {
+                Bitmap bitmap = BitmapFactory.decodeByteArray(imagen, 0, imagen.length);
+                imgAbogado.setImageBitmap(bitmap);
+            }
+
         } else {
             Toast.makeText(this, "No se encontró el abogado", Toast.LENGTH_SHORT).show();
             finish();

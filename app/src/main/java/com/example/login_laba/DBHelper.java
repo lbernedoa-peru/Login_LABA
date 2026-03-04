@@ -26,7 +26,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 "especialidad TEXT," +
                 "telefono TEXT," +
                 "correo TEXT," +
-                "biografia TEXT)";
+                "biografia TEXT," +
+                "imagen BLOB)";
 
         db.execSQL(crearTabla);
 
@@ -62,10 +63,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // INSERTAR ABOGADO
     public boolean insertarAbogado(String dni, String nombre, String especialidad,
-                                   String telefono, String correo, String biografia) {
-
+                                   String telefono, String correo, String biografia,
+                                   byte[] imagen) {
         SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put("dni", dni);
         values.put("nombre", nombre);
@@ -73,7 +73,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("telefono", telefono);
         values.put("correo", correo);
         values.put("biografia", biografia);
-
+        values.put("imagen", imagen);
         long resultado = db.insert("abogados", null, values);
         return resultado != -1;
     }
@@ -84,12 +84,14 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT * FROM abogados ORDER BY id DESC", null);
     }
 
+    // OBTENER POR ID (Cursor)
     public Cursor obtenerAbogadoPorId(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM abogados WHERE id = ?",
                 new String[]{String.valueOf(id)});
     }
-    //para activity ver
+
+    // OBTENER POR ID (Objeto)
     public Abogado obtenerAbogadoObjeto(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM abogados WHERE id = ?",
@@ -102,7 +104,8 @@ public class DBHelper extends SQLiteOpenHelper {
                     cursor.getString(cursor.getColumnIndexOrThrow("especialidad")),
                     cursor.getString(cursor.getColumnIndexOrThrow("telefono")),
                     cursor.getString(cursor.getColumnIndexOrThrow("correo")),
-                    cursor.getString(cursor.getColumnIndexOrThrow("biografia"))
+                    cursor.getString(cursor.getColumnIndexOrThrow("biografia")),
+                    cursor.getBlob(cursor.getColumnIndexOrThrow("imagen"))
             );
             cursor.close();
             return abogado;
@@ -115,13 +118,15 @@ public class DBHelper extends SQLiteOpenHelper {
     // BUSCAR POR NOMBRE
     public Cursor buscarPorNombre(String nombre) {
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM abogados WHERE nombre LIKE ?", new String[]{"%" + nombre + "%"});
+        return db.rawQuery("SELECT * FROM abogados WHERE nombre LIKE ?",
+                new String[]{"%" + nombre + "%"});
     }
 
     // BUSCAR POR DNI
     public Cursor buscarPorDni(String dni) {
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM abogados WHERE dni LIKE ?", new String[]{"%" + dni + "%"});
+        return db.rawQuery("SELECT * FROM abogados WHERE dni LIKE ?",
+                new String[]{"%" + dni + "%"});
     }
 
     // BUSCAR POR ID
@@ -140,10 +145,8 @@ public class DBHelper extends SQLiteOpenHelper {
     // ACTUALIZAR
     public boolean actualizarAbogado(int id, String dni, String nombre,
                                      String especializacion, String telefono,
-                                     String correo, String biografia) {
-
+                                     String correo, String biografia, byte[] imagen) {
         SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put("dni", dni);
         values.put("nombre", nombre);
@@ -151,13 +154,13 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("telefono", telefono);
         values.put("correo", correo);
         values.put("biografia", biografia);
-
+        values.put("imagen", imagen);
         int resultado = db.update("abogados", values, "id=?",
                 new String[]{String.valueOf(id)});
-
         return resultado > 0;
     }
-    // Verifica si el DNI ya existe en otro registro (excluyendo el actual)
+
+    // VERIFICAR DNI DUPLICADO
     public boolean existeDni(String dni, int idActual) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(
