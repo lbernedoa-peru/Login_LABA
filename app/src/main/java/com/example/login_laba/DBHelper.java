@@ -89,6 +89,26 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT * FROM abogados WHERE id = ?",
                 new String[]{String.valueOf(id)});
     }
+    //para activity ver
+    public Abogado obtenerAbogadoObjeto(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM abogados WHERE id = ?",
+                new String[]{String.valueOf(id)});
+
+        if (cursor != null && cursor.moveToFirst()) {
+            Abogado abogado = new Abogado(
+                    cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("especialidad")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("telefono")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("correo"))
+            );
+            cursor.close();
+            return abogado;
+        }
+
+        if (cursor != null) cursor.close();
+        return null;
+    }
 
     // BUSCAR POR NOMBRE
     public Cursor buscarPorNombre(String nombre) {

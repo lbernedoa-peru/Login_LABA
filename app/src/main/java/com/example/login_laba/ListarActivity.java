@@ -85,7 +85,13 @@ public class ListarActivity extends AppCompatActivity {
             new AlertDialog.Builder(this)
                     .setTitle("Opciones")
                     .setMessage(datos)
-                    .setPositiveButton("Ver", null)
+                    .setPositiveButton("Ver", (d, i) -> {
+
+                        Intent intent = new Intent(ListarActivity.this, VerActivity.class);
+                        intent.putExtra("id", idAbogado);
+                        startActivity(intent);
+
+                    })
                     .setNeutralButton("Editar", (d, i) -> {
 
                         Intent intent = new Intent(ListarActivity.this, EditarActivity.class);
@@ -93,7 +99,32 @@ public class ListarActivity extends AppCompatActivity {
                         startActivity(intent);
 
                     })
-                    .setNegativeButton("Eliminar", null)
+                    .setNegativeButton("Eliminar", (d, i) -> {
+
+                        new AlertDialog.Builder(this)
+                                .setTitle("Confirmar eliminación")
+                                .setMessage("¿Desea eliminar este usuario?")
+                                .setPositiveButton("Sí", (d2, i2) -> {
+
+                                    // Eliminar de la base de datos
+                                    boolean eliminado = db.eliminarAbogado(idAbogado);
+
+                                    if (eliminado) {
+                                        // Actualizar las listas
+                                        lista.remove(position);
+                                        listaIds.remove(position);
+                                        adapter.notifyDataSetChanged();
+
+                                        Toast.makeText(this, "Abogado eliminado correctamente", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(this, "Error al eliminar", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                })
+                                .setNegativeButton("No", (d2, i2) -> d2.dismiss())
+                                .show();
+
+                    })
                     .show();
         });
     }

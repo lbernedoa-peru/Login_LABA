@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fondo_suave"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- TITULO -->
+        <TextView
+            android:text="Detalle Abogado"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#0D47A1"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- TARJETA -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- DNI -->
+                <TextView
+                    android:text="DNI"
+                    android:textStyle="bold"
+                    android:textColor="#0D47A1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/txtDni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="#F5F5F5"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- NOMBRE -->
+                <TextView
+                    android:text="Nombre"
+                    android:textStyle="bold"
+                    android:textColor="#0D47A1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/txtNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="#F5F5F5"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- ESPECIALIZACIÓN -->
+                <TextView
+                    android:text="Especialización"
+                    android:textStyle="bold"
+                    android:textColor="#0D47A1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/txtEspecializacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="#F5F5F5"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- TELÉFONO -->
+                <TextView
+                    android:text="Teléfono"
+                    android:textStyle="bold"
+                    android:textColor="#0D47A1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/txtTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="#F5F5F5"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- CORREO -->
+                <TextView
+                    android:text="Correo electrónico"
+                    android:textStyle="bold"
+                    android:textColor="#0D47A1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/etCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="#F5F5F5"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- BIOGRAFÍA -->
+                <TextView
+                    android:text="Biografía"
+                    android:textStyle="bold"
+                    android:textColor="#0D47A1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/txtBiografia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="#F5F5F5"
+                    android:minLines="3"
+                    android:gravity="top"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- BOTÓN VOLVER -->
+                <Button
+                    android:id="@+id/btnVolver"
+                    android:text="Volver"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#1565C0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

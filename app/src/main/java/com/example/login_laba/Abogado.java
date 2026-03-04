@@ -15,4 +15,9 @@ public class Abogado {
         this.correo = correo;
     }
 
+    public int getId()           { return id; }
+    public String getNombre()    { return nombre; }
+    public String getEspecialidad() { return especialidad; }
+    public String getTelefono()  { return telefono; }
+    public String getCorreo()    { return correo; }
 }
