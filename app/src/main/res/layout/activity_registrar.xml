@@ -41,6 +41,7 @@
                     android:id="@+id/txtNombre"
                     android:hint="Nombre del abogado"
                     android:inputType="textPersonName"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
@@ -73,7 +74,7 @@
                     android:layout_height="wrap_content"/>
 
                 <!-- CORREO -->
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/etCorreo"
                     android:hint="Correo electrónico"
                     android:inputType="textEmailAddress"
