@@ -55,7 +55,7 @@ public class ListarActivity extends AppCompatActivity {
 
         btnLimpiar.setOnClickListener(v -> {
             txtBuscar.setText("");
-            rbNombre.setChecked(false);
+            rbNombre.setChecked(true);
             rbId.setChecked(false);
             rbDni.setChecked(false);
 
